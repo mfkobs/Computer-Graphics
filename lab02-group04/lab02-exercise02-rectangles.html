@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangles</title>
+</head>
+<body>
+    <script type="text/javascript">
+        "use strict";
+
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            draw() {
+                let result = "";
+                result += "+".repeat(this.width) + "\n";
+
+                for (let i = 0; i < this.height - 2; i++) {
+                    result += "+" + "-".repeat(this.width - 2) + "+\n";
+                }
+
+                if (this.height > 1) {
+                    result += "+".repeat(this.width) + "\n";
+                }
+
+                console.log(result);
+            }
+        }
+        const rectangle1 = new Rectangle(1, 1);
+        const rectangle2 = new Rectangle(5, 5);
+        const rectangle3 = new Rectangle(10, 4);
+
+        rectangle1.draw();
+        rectangle2.draw();
+        rectangle3.draw();
+    </script>
+</body>
+</html>
